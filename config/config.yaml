@@ -4,15 +4,15 @@ artifacts_root: artifacts
 data_ingestion:
   root_dir: artifacts/data_ingestion
   source_URL: https://github.com/Fazil463/ml-project-withmlflow/raw/refs/heads/main/diabetes%20dataset.zip
-  local_data_file: artifacts/data_ingestion/data.zip
+  local_data_file: D:\DataScience\Ml flow project\ml-project-withmlflow\artifacts\data_ingestion\data.zip
   unzip_dir: artifacts/data_ingestion
 
 
 
-# data_validation:
-#   root_dir: artifacts/data_validation
-#   unzip_data_dir: artifacts/data_ingestion/winequality-red.csv
-#   STATUS_FILE: artifacts/data_validation/status.txt
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_data_dir: D:\DataScience\Ml flow project\ml-project-withmlflow\artifacts\data_ingestion\Dataset of Diabetes .csv
+  STATUS_FILE: artifacts/data_validation/status.txt
 
 
 

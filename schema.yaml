@@ -1,1 +1,18 @@
-key: val
+COLUMNS:
+  ID: int64
+  No_Pation: int64
+  Gender: object
+  AGE: int64
+  Urea: float64
+  Cr: int64
+  HbA1c: float64
+  Chol: float64
+  TG: float64
+  HDL: float64
+  LDL: float64
+  VLDL: float64
+  BMI: float64
+  CLASS: object
+
+TARGET_COLUMN:
+  name: CLASS
