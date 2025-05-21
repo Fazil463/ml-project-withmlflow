@@ -1,18 +1,65 @@
-COLUMNS:
-  ID: int64
-  No_Pation: int64
-  Gender: object
-  AGE: int64
-  Urea: float64
-  Cr: int64
-  HbA1c: float64
-  Chol: float64
-  TG: float64
-  HDL: float64
-  LDL: float64
-  VLDL: float64
-  BMI: float64
-  CLASS: object
+version: 1
 
-TARGET_COLUMN:
-  name: CLASS
+columns:
+  ID:
+    dtype: int64
+    description: Unique identifier for each record
+    use: drop  # drop this column before training
+
+  No_Pation:
+    dtype: int64
+    description: Patient number or count
+    use: drop  # drop this column before training
+
+  Gender:
+    dtype: categorical
+    description: Gender of the patient (M/F)
+    encoding: binary  # map M=1, F=0
+
+  AGE:
+    dtype: int64
+    description: Age of the patient in years
+
+  Urea:
+    dtype: float64
+    description: Blood urea levels
+
+  Cr:
+    dtype: int64
+    description: Creatinine level
+
+  HbA1c:
+    dtype: float64
+    description: Hemoglobin A1c percentage
+
+  Chol:
+    dtype: float64
+    description: Cholesterol level
+
+  TG:
+    dtype: float64
+    description: Triglycerides level
+
+  HDL:
+    dtype: float64
+    description: High-density lipoprotein level
+
+  LDL:
+    dtype: float64
+    description: Low-density lipoprotein level
+
+  VLDL:
+    dtype: float64
+    description: Very low-density lipoprotein level
+
+  BMI:
+    dtype: float64
+    description: Body Mass Index
+
+  CLASS:
+    dtype: categorical
+    description: Target variable indicating diabetes classification
+    encoding: label
+    target: true
+
+target_column: CLASS
