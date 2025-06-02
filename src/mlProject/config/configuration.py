@@ -4,7 +4,8 @@ from mlProject.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataTransformationConfig,
-    ModelTrainerConfig
+    ModelTrainerConfig,
+    ModelEvaluationConfig
 )
 import pandas as pd
 import os
@@ -101,3 +102,35 @@ class ConfigurationManager:
         except Exception as e:
             logger.error(f"Error in getting model trainer config: {e}")
             raise
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        try:
+            config = self.config.model_evaluation
+            schema = self.schema.TARGET_COLUMN  # This is already a string
+
+            # Safely extract RandomForest params
+            rf_keys = ["RandomForest", "random_forest", "randomforest"]
+            params = None
+            for key in rf_keys:
+                if hasattr(self.params, key):
+                    params = getattr(self.params, key)
+                    break
+            if params is None:
+                raise ValueError("RandomForest parameters not found in params.yaml")
+
+            # Ensure model evaluation directory exists
+            create_directories([config.root_dir])
+
+            return ModelEvaluationConfig(
+                root_dir=config.root_dir,
+                test_data_path=config.test_data_path,
+                model_path=config.model_path,
+                all_params=params,
+                metric_file_name=config.metric_file_name,
+                target_column=schema,  # ✅ FIXED HERE
+                mlflow_uri="https://dagshub.com/fazilkkv123/ml-project-withmlflow.mlflow"  # Update with your actual URI
+            )
+
+        except Exception as e:
+            logger.error(f"Error in getting model evaluation config: {e}")
+            raise 
