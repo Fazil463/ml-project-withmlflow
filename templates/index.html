@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Diabetes Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; padding: 30px; }
+        form { background: white; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px; width: 100%; background: #4CAF50; color: white; font-size: 16px; border: none; cursor: pointer; border-radius: 5px; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Diabetes Prediction Form</h2>
+    <form action="/predict" method="post">
+        <label for="Gender">Gender:</label>
+        <select name="Gender" id="Gender" required>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+
+        <label for="AGE">Age:</label>
+        <input type="number" name="AGE" id="AGE" required min="1" max="120" />
+
+        <label for="Urea">Urea:</label>
+        <input type="number" name="Urea" id="Urea" step="any" required />
+
+        <label for="Cr">Creatinine (Cr):</label>
+        <input type="number" name="Cr" id="Cr" step="any" required />
+
+        <label for="HbA1c">HbA1c (%):</label>
+        <input type="number" name="HbA1c" id="HbA1c" step="any" required />
+
+        <label for="Chol">Cholesterol:</label>
+        <input type="number" name="Chol" id="Chol" step="any" required />
+
+        <label for="TG">Triglycerides (TG):</label>
+        <input type="number" name="TG" id="TG" step="any" required />
+
+        <label for="HDL">HDL:</label>
+        <input type="number" name="HDL" id="HDL" step="any" required />
+
+        <label for="LDL">LDL:</label>
+        <input type="number" name="LDL" id="LDL" step="any" required />
+
+        <label for="VLDL">VLDL:</label>
+        <input type="number" name="VLDL" id="VLDL" step="any" required />
+
+        <label for="BMI">BMI:</label>
+        <input type="number" name="BMI" id="BMI" step="any" required />
+
+        <button type="submit">Predict Diabetes</button>
+    </form>
+</body>
+</html>

@@ -9,6 +9,7 @@ import joblib
 from mlProject.entity.config_entity import ModelEvaluationConfig
 from mlProject.utils.common import save_json
 from pathlib import path
+from mlProject.Preprocesiing.preprocesing import encode_categorical
 class ModelEvaluation:
     def __init__(self, config: ModelEvaluationConfig):
         self.config = config

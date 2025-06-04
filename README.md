@@ -70,7 +70,7 @@ open up you local host and port
 
 MLFLOW_TRACKING_URI=https://dagshub.com/fazilkkv123/ml-project-withmlflow.mlflow /
 MLFLOW_TRACKING_USERNAME=fazilkkv123 \
-MLFLOW_TRACKING_PASSWORD=  a42bc73a89e2ac3aab67256f1868de43ba765b57 \
+MLFLOW_TRACKING_PASSWORD=  dc37b3d4328027e958d94a9b94691c8b5ec09b92 /
 
 
 Run this to export as env variables:
@@ -81,9 +81,18 @@ export MLFLOW_TRACKING_URI=https://dagshub.com/fazilkkv123/ml-project-withmlflow
 
 export MLFLOW_TRACKING_USERNAME=fazilkkv123 
 
-export MLFLOW_TRACKING_PASSWORD=a42bc73a89e2ac3aab67256f1868de43ba765b57
+export MLFLOW_TRACKING_PASSWORD=dc37b3d4328027e958d94a9b94691c8b5ec09b92 
 
 ```
+
+import mlflow
+import dagshub
+
+dagshub.init(repo_owner='fazilkkv123', repo_name='ml-project-withmlflow', mlflow=True)
+
+with mlflow.start_run():
+    mlflow.log_param('learning_rate', 0.01)
+    mlflow.log_metric('rmse', 0.123)
 
 
 
