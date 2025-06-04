@@ -1,8 +1,27 @@
 # ml-project-with mlflow
 
-
+   
 # End-to-end-Machine-Learning-Project-with-MLflow
 
+
+Diabetes Prediction App 🚑📊
+This project features a machine learning model that predicts diabetes risk from patient health data. The model is trained, evaluated, and deployed as a REST API on AWS, leveraging MLflow for model tracking, versioning, and lifecycle management.
+
+Key Highlights:
+
+Built with Python and Scikit-learn for accurate diabetes risk prediction.
+
+End-to-end pipeline: data preprocessing → model training → deployment.
+
+Scalable cloud deployment on AWS (EC2/Lambda).
+
+Integrated MLflow for experiment tracking, model registry, and reproducibility.
+
+Provides real-time predictions through a user-friendly API interface.
+
+Ideal for healthcare professionals to assist early diagnosis and preventive care.
+
+Check out the README for setup instructions, usage, and demo!
 
 ## Workflows
 
